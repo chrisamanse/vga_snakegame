@@ -1,0 +1,1142 @@
+Analysis & Synthesis report for vga_snakegame
+Mon Mar 17 12:09:12 2014
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis DSP Block Usage Summary
+  8. State Machine - |vga_snakegame|gameState
+  9. State Machine - |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vstate
+ 10. State Machine - |vga_snakegame|hvsyncgenerator:hvsyncgenerate|state
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |vga_snakegame
+ 16. Parameter Settings for User Entity Instance: counter:cnt50M
+ 17. Parameter Settings for User Entity Instance: counter:cnt180B
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
+ 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 24. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 25. lpm_mult Parameter Settings by Entity Instance
+ 26. Port Connectivity Checks: "edgedetect:pb3ne"
+ 27. Port Connectivity Checks: "edgedetect:pb0ne"
+ 28. Port Connectivity Checks: "counter:cnt180B"
+ 29. Port Connectivity Checks: "counter:cnt50M"
+ 30. Port Connectivity Checks: "hvsyncgenerator:hvsyncgenerate"
+ 31. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++------------------------------------+-----------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Mar 17 12:09:12 2014   ;
+; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Web Edition ;
+; Revision Name                      ; vga_snakegame                           ;
+; Top-level Entity Name              ; vga_snakegame                           ;
+; Family                             ; Cyclone II                              ;
+; Total logic elements               ; 8,146                                   ;
+;     Total combinational functions  ; 8,139                                   ;
+;     Dedicated logic registers      ; 894                                     ;
+; Total registers                    ; 894                                     ;
+; Total pins                         ; 65                                      ;
+; Total virtual pins                 ; 0                                       ;
+; Total memory bits                  ; 0                                       ;
+; Embedded Multiplier 9-bit elements ; 3                                       ;
+; Total PLLs                         ; 0                                       ;
++------------------------------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Device                                                         ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                          ; vga_snakegame      ; vga_snakegame      ;
+; Family name                                                    ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                        ; Off                ;                    ;
+; Auto Shift Register Replacement                                ; Always             ; Auto               ;
+; Allow Any RAM Size For Recognition                             ; On                 ; Off                ;
+; Allow Any ROM Size For Recognition                             ; On                 ; Off                ;
+; Allow Any Shift Register Size For Recognition                  ; On                 ; Off                ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; DSP Block Balancing                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Auto ROM Replacement                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                           ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Strict RAM Replacement                                         ; Off                ; Off                ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                              ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Timing-Driven Synthesis                                        ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                    ; Off                ; Off                ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; SDC constraint protection                                      ; Off                ; Off                ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                               ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                     ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+
+; vga_snakegame.v                  ; yes             ; User Verilog HDL File        ; c:/altera/90/quartus/vga_snakegame/vga_snakegame.v               ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_divide.tdf      ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/abs_divider.inc     ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/sign_div_unsign.inc ;
+; aglobal90.inc                    ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/aglobal90.inc       ;
+; db/lpm_divide_d6m.tdf            ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/lpm_divide_d6m.tdf         ;
+; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/sign_div_unsign_klh.tdf    ;
+; db/alt_u_div_a2f.tdf             ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/alt_u_div_a2f.tdf          ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/add_sub_lkc.tdf            ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/add_sub_mkc.tdf            ;
+; db/lpm_divide_55m.tdf            ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/lpm_divide_55m.tdf         ;
+; db/sign_div_unsign_ckh.tdf       ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/sign_div_unsign_ckh.tdf    ;
+; db/alt_u_div_qve.tdf             ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/alt_u_div_qve.tdf          ;
+; db/lpm_divide_2dm.tdf            ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/lpm_divide_2dm.tdf         ;
+; db/lpm_divide_aem.tdf            ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/lpm_divide_aem.tdf         ;
+; db/lpm_divide_p6m.tdf            ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/lpm_divide_p6m.tdf         ;
+; db/sign_div_unsign_0mh.tdf       ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/sign_div_unsign_0mh.tdf    ;
+; db/alt_u_div_23f.tdf             ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/alt_u_div_23f.tdf          ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_mult.tdf        ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/lpm_add_sub.inc     ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/multcore.inc        ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/bypassff.inc        ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/90/quartus/libraries/megafunctions/altshift.inc        ;
+; db/mult_ot01.tdf                 ; yes             ; Auto-Generated Megafunction  ; c:/altera/90/quartus/vga_snakegame/db/mult_ot01.tdf              ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 8,146    ;
+;                                             ;          ;
+; Total combinational functions               ; 8139     ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 5823     ;
+;     -- 3 input functions                    ; 1365     ;
+;     -- <=2 input functions                  ; 951      ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 7429     ;
+;     -- arithmetic mode                      ; 710      ;
+;                                             ;          ;
+; Total registers                             ; 894      ;
+;     -- Dedicated logic registers            ; 894      ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 65       ;
+; Embedded Multiplier 9-bit elements          ; 3        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 879      ;
+; Total fan-out                               ; 32046    ;
+; Average fan-out                             ; 3.52     ;
++---------------------------------------------+----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
+; |vga_snakegame                         ; 8139 (6325)       ; 894 (791)    ; 0           ; 3            ; 1       ; 1         ; 65   ; 0            ; |vga_snakegame                                                                                                 ; work         ;
+;    |counter:cnt180B|                   ; 52 (52)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|counter:cnt180B                                                                                 ; work         ;
+;    |counter:cnt50M|                    ; 52 (52)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|counter:cnt50M                                                                                  ; work         ;
+;    |edgedetect:dirEdge|                ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|edgedetect:dirEdge                                                                              ; work         ;
+;    |edgedetect:pb0ne|                  ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|edgedetect:pb0ne                                                                                ; work         ;
+;    |edgedetect:pb3ne|                  ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|edgedetect:pb3ne                                                                                ; work         ;
+;    |hvsyncgenerator:hvsyncgenerate|    ; 81 (81)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate                                                                  ; work         ;
+;    |lpm_divide:Div0|                   ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Div0                                                                                 ; work         ;
+;       |lpm_divide_aem:auto_generated|  ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Div0|lpm_divide_aem:auto_generated                                                   ; work         ;
+;          |sign_div_unsign_klh:divider| ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Div0|lpm_divide_aem:auto_generated|sign_div_unsign_klh:divider                       ; work         ;
+;             |alt_u_div_a2f:divider|    ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Div0|lpm_divide_aem:auto_generated|sign_div_unsign_klh:divider|alt_u_div_a2f:divider ; work         ;
+;    |lpm_divide:Div1|                   ; 69 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Div1                                                                                 ; work         ;
+;       |lpm_divide_2dm:auto_generated|  ; 69 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Div1|lpm_divide_2dm:auto_generated                                                   ; work         ;
+;          |sign_div_unsign_ckh:divider| ; 69 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Div1|lpm_divide_2dm:auto_generated|sign_div_unsign_ckh:divider                       ; work         ;
+;             |alt_u_div_qve:divider|    ; 69 (69)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Div1|lpm_divide_2dm:auto_generated|sign_div_unsign_ckh:divider|alt_u_div_qve:divider ; work         ;
+;    |lpm_divide:Mod0|                   ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod0                                                                                 ; work         ;
+;       |lpm_divide_d6m:auto_generated|  ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod0|lpm_divide_d6m:auto_generated                                                   ; work         ;
+;          |sign_div_unsign_klh:divider| ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod0|lpm_divide_d6m:auto_generated|sign_div_unsign_klh:divider                       ; work         ;
+;             |alt_u_div_a2f:divider|    ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod0|lpm_divide_d6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_a2f:divider ; work         ;
+;    |lpm_divide:Mod1|                   ; 69 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod1                                                                                 ; work         ;
+;       |lpm_divide_55m:auto_generated|  ; 69 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod1|lpm_divide_55m:auto_generated                                                   ; work         ;
+;          |sign_div_unsign_ckh:divider| ; 69 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod1|lpm_divide_55m:auto_generated|sign_div_unsign_ckh:divider                       ; work         ;
+;             |alt_u_div_qve:divider|    ; 69 (69)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod1|lpm_divide_55m:auto_generated|sign_div_unsign_ckh:divider|alt_u_div_qve:divider ; work         ;
+;    |lpm_divide:Mod2|                   ; 653 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod2                                                                                 ; work         ;
+;       |lpm_divide_p6m:auto_generated|  ; 653 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod2|lpm_divide_p6m:auto_generated                                                   ; work         ;
+;          |sign_div_unsign_0mh:divider| ; 653 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod2|lpm_divide_p6m:auto_generated|sign_div_unsign_0mh:divider                       ; work         ;
+;             |alt_u_div_23f:divider|    ; 653 (653)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod2|lpm_divide_p6m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_23f:divider ; work         ;
+;    |lpm_divide:Mod3|                   ; 653 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod3                                                                                 ; work         ;
+;       |lpm_divide_p6m:auto_generated|  ; 653 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod3|lpm_divide_p6m:auto_generated                                                   ; work         ;
+;          |sign_div_unsign_0mh:divider| ; 653 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod3|lpm_divide_p6m:auto_generated|sign_div_unsign_0mh:divider                       ; work         ;
+;             |alt_u_div_23f:divider|    ; 653 (653)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_snakegame|lpm_divide:Mod3|lpm_divide_p6m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_23f:divider ; work         ;
+;    |lpm_mult:Mult0|                    ; 14 (0)            ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |vga_snakegame|lpm_mult:Mult0                                                                                  ; work         ;
+;       |mult_ot01:auto_generated|       ; 14 (14)           ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |vga_snakegame|lpm_mult:Mult0|mult_ot01:auto_generated                                                         ; work         ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 1           ;
+; Simple Multipliers (18-bit)           ; 1           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 3           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 2           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------+
+; State Machine - |vga_snakegame|gameState                  ;
++--------------+--------------+--------------+--------------+
+; Name         ; gameState.00 ; gameState.10 ; gameState.01 ;
++--------------+--------------+--------------+--------------+
+; gameState.00 ; 0            ; 0            ; 0            ;
+; gameState.01 ; 1            ; 0            ; 1            ;
+; gameState.10 ; 1            ; 1            ; 0            ;
++--------------+--------------+--------------+--------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------+
+; State Machine - |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vstate ;
++-----------+-----------+-----------+-----------+----------------------+
+; Name      ; vstate.11 ; vstate.10 ; vstate.01 ; vstate.00            ;
++-----------+-----------+-----------+-----------+----------------------+
+; vstate.00 ; 0         ; 0         ; 0         ; 0                    ;
+; vstate.01 ; 0         ; 0         ; 1         ; 1                    ;
+; vstate.10 ; 0         ; 1         ; 0         ; 1                    ;
+; vstate.11 ; 1         ; 0         ; 0         ; 1                    ;
++-----------+-----------+-----------+-----------+----------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------+
+; State Machine - |vga_snakegame|hvsyncgenerator:hvsyncgenerate|state ;
++----------+----------+----------+----------+-------------------------+
+; Name     ; state.11 ; state.10 ; state.01 ; state.00                ;
++----------+----------+----------+----------+-------------------------+
+; state.00 ; 0        ; 0        ; 0        ; 0                       ;
+; state.01 ; 0        ; 0        ; 1        ; 1                       ;
+; state.10 ; 0        ; 1        ; 0        ; 1                       ;
+; state.11 ; 1        ; 0        ; 0        ; 1                       ;
++----------+----------+----------+----------+-------------------------+
+
+
++---------------------------------------------------------------+
+; Registers Removed During Synthesis                            ;
++------------------------------------------+--------------------+
+; Register name                            ; Reason for Removal ;
++------------------------------------------+--------------------+
+; hvsyncgenerator:hvsyncgenerate|vstate~21 ; Lost fanout        ;
+; hvsyncgenerator:hvsyncgenerate|vstate~22 ; Lost fanout        ;
+; hvsyncgenerator:hvsyncgenerate|state~25  ; Lost fanout        ;
+; hvsyncgenerator:hvsyncgenerate|state~26  ; Lost fanout        ;
+; gameState.00                             ; Lost fanout        ;
+; Total Number of Removed Registers = 5    ;                    ;
++------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 894   ;
+; Number of registers using Synchronous Clear  ; 105   ;
+; Number of registers using Synchronous Load   ; 112   ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 773   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; snakeLength[3]                            ; 230     ;
+; snakeLength[1]                            ; 47      ;
+; snakeLength[2]                            ; 227     ;
+; hvsyncgenerator:hvsyncgenerate|cnt[0]     ; 6       ;
+; foodX[0]                                  ; 13      ;
+; foodX[1]                                  ; 66      ;
+; foodY[0]                                  ; 19      ;
+; foodY[1]                                  ; 68      ;
+; foodX[3]                                  ; 67      ;
+; foodY[2]                                  ; 68      ;
+; foodX[5]                                  ; 67      ;
+; foodY[4]                                  ; 68      ;
+; hvsyncgenerator:hvsyncgenerate|vrgboff    ; 3       ;
+; hvsyncgenerator:hvsyncgenerate|hrgboff    ; 3       ;
+; storedX[3][0]                             ; 4       ;
+; storedX[9][0]                             ; 4       ;
+; storedX[5][0]                             ; 4       ;
+; storedX[1][0]                             ; 4       ;
+; storedX[13][0]                            ; 4       ;
+; storedX[7][0]                             ; 4       ;
+; storedX[11][0]                            ; 4       ;
+; storedX[4][2]                             ; 6       ;
+; storedX[12][2]                            ; 6       ;
+; storedX[10][2]                            ; 6       ;
+; storedX[2][2]                             ; 6       ;
+; storedX[3][2]                             ; 6       ;
+; storedX[5][2]                             ; 6       ;
+; storedX[13][2]                            ; 6       ;
+; storedX[11][2]                            ; 6       ;
+; storedY[8][0]                             ; 5       ;
+; storedY[4][0]                             ; 5       ;
+; storedY[0][0]                             ; 2       ;
+; storedY[12][0]                            ; 5       ;
+; storedY[10][0]                            ; 5       ;
+; storedY[6][0]                             ; 5       ;
+; storedY[2][0]                             ; 5       ;
+; storedY[3][0]                             ; 5       ;
+; storedY[9][0]                             ; 5       ;
+; storedY[5][0]                             ; 5       ;
+; storedY[1][0]                             ; 5       ;
+; storedY[13][0]                            ; 5       ;
+; storedY[7][0]                             ; 5       ;
+; storedY[11][0]                            ; 5       ;
+; storedX[8][1]                             ; 6       ;
+; storedX[4][1]                             ; 6       ;
+; storedX[0][1]                             ; 2       ;
+; storedX[12][1]                            ; 6       ;
+; storedX[9][1]                             ; 6       ;
+; storedX[5][1]                             ; 6       ;
+; storedX[1][1]                             ; 6       ;
+; storedX[13][1]                            ; 6       ;
+; storedX[4][3]                             ; 6       ;
+; storedX[0][3]                             ; 2       ;
+; storedX[2][3]                             ; 6       ;
+; storedX[5][3]                             ; 6       ;
+; storedX[1][3]                             ; 6       ;
+; storedX[3][3]                             ; 6       ;
+; storedY[4][1]                             ; 6       ;
+; storedY[8][1]                             ; 6       ;
+; storedY[0][1]                             ; 2       ;
+; storedY[12][1]                            ; 6       ;
+; storedY[6][1]                             ; 6       ;
+; storedY[10][1]                            ; 6       ;
+; storedY[2][1]                             ; 6       ;
+; storedY[9][1]                             ; 6       ;
+; storedY[5][1]                             ; 6       ;
+; storedY[1][1]                             ; 6       ;
+; storedY[13][1]                            ; 6       ;
+; storedY[3][1]                             ; 6       ;
+; storedY[7][1]                             ; 6       ;
+; storedY[11][1]                            ; 6       ;
+; storedX[8][4]                             ; 6       ;
+; storedX[12][4]                            ; 6       ;
+; storedX[10][4]                            ; 6       ;
+; storedX[6][4]                             ; 12      ;
+; storedX[9][4]                             ; 6       ;
+; storedX[13][4]                            ; 6       ;
+; storedX[7][4]                             ; 8       ;
+; storedX[11][4]                            ; 6       ;
+; storedY[8][2]                             ; 6       ;
+; storedY[4][2]                             ; 6       ;
+; storedY[0][2]                             ; 2       ;
+; storedY[12][2]                            ; 6       ;
+; storedY[10][2]                            ; 6       ;
+; storedY[6][2]                             ; 6       ;
+; storedY[2][2]                             ; 6       ;
+; storedY[3][2]                             ; 6       ;
+; storedY[9][2]                             ; 6       ;
+; storedY[5][2]                             ; 6       ;
+; storedY[1][2]                             ; 6       ;
+; storedY[13][2]                            ; 6       ;
+; storedY[7][2]                             ; 6       ;
+; storedY[11][2]                            ; 6       ;
+; storedY[8][4]                             ; 6       ;
+; storedY[4][4]                             ; 6       ;
+; storedY[0][4]                             ; 2       ;
+; storedY[12][4]                            ; 6       ;
+; storedY[10][4]                            ; 6       ;
+; storedY[6][4]                             ; 6       ;
+; storedY[2][4]                             ; 6       ;
+; Total number of inverted registers = 109* ;         ;
++-------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; 3:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |vga_snakegame|counter:cnt50M|q[8]                       ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[2]    ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[1]     ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |vga_snakegame|snakeLength[5]                            ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |vga_snakegame|foodY[3]                                  ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[0][5]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedX[0][5]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[1][3]                             ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[1][5]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[2][3]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedX[2][4]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[3][5]                             ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[3][4]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[4][5]                             ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[4][5]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[5][3]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedX[5][4]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[6][3]                             ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |vga_snakegame|storedX[6][2]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[7][5]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedX[7][3]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[8][5]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedX[8][0]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[9][3]                             ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[9][2]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[10][3]                            ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedX[10][0]                            ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[11][3]                            ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[11][5]                            ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[12][5]                            ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[12][5]                            ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedY[13][3]                            ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedX[13][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[14][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[14][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[15][1]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[15][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[16][1]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[16][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[17][1]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[17][1]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[18][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[18][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[19][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[19][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[20][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[20][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[21][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[21][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[22][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[22][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[23][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[23][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[24][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[24][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[25][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[25][1]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[26][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[26][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[27][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[27][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[28][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[28][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[29][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[29][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[30][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[30][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[31][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[31][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[32][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[32][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[33][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[33][1]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[34][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[34][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[35][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[35][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[36][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[36][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[37][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[37][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[38][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[38][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[39][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[39][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[40][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[40][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[41][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[41][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[42][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[42][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[43][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[43][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[44][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[44][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[45][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[45][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[46][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[46][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[47][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[47][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[48][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[48][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[49][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[49][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[50][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[50][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[51][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[51][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[52][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[52][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[53][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[53][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[54][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[54][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[55][4]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[55][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[56][1]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[56][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[57][1]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[57][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[58][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[58][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[59][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[59][2]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[60][0]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[60][3]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedY[61][5]                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |vga_snakegame|storedX[61][4]                            ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedY[62][2]                            ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[62][4]                            ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |vga_snakegame|snakeLength[3]                            ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |vga_snakegame|foodY[2]                                  ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[0][4]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedX[0][3]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[1][4]                             ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[1][0]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[2][2]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedX[2][2]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[3][4]                             ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[3][3]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[4][4]                             ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[4][3]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[5][4]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedX[5][3]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[6][4]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[7][1]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedX[7][4]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[8][1]                             ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedX[8][4]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[9][1]                             ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[9][4]                             ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[10][1]                            ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |vga_snakegame|storedX[10][2]                            ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[11][1]                            ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[11][4]                            ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[12][1]                            ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |vga_snakegame|storedX[12][4]                            ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedY[13][1]                            ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |vga_snakegame|storedX[13][4]                            ;
+; 63:1               ; 12 bits   ; 504 LEs       ; 504 LEs              ; 0 LEs                  ; No         ; |vga_snakegame|Mux785                                    ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector29 ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector14 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |vga_snakegame|Selector1                                 ;
+; 255:1              ; 2 bits    ; 340 LEs       ; 4 LEs                ; 336 LEs                ; No         ; |vga_snakegame|gameState~773                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |vga_snakegame ;
++----------------+---------+----------------------------------------------------+
+; Parameter Name ; Value   ; Type                                               ;
++----------------+---------+----------------------------------------------------+
+; N              ; 5000000 ; Signed Integer                                     ;
+; length         ; 63      ; Signed Integer                                     ;
++----------------+---------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:cnt50M ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; N              ; 26    ; Signed Integer                     ;
+; initialq       ; 1     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:cnt180B ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; N              ; 38    ; Signed Integer                      ;
+; initialq       ; 1     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_d6m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_55m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_2dm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_aem ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 38             ; Untyped                ;
+; LPM_WIDTHD             ; 6              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_p6m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 38             ; Untyped                ;
+; LPM_WIDTHD             ; 6              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_p6m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                   ;
++------------------------------------------------+------------+---------------------+
+; Parameter Name                                 ; Value      ; Type                ;
++------------------------------------------------+------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 6          ; Untyped             ;
+; LPM_WIDTHB                                     ; 26         ; Untyped             ;
+; LPM_WIDTHP                                     ; 32         ; Untyped             ;
+; LPM_WIDTHR                                     ; 32         ; Untyped             ;
+; LPM_WIDTHS                                     ; 1          ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped             ;
+; LPM_PIPELINE                                   ; 0          ; Untyped             ;
+; LATENCY                                        ; 0          ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped             ;
+; USE_EAB                                        ; OFF        ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5          ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_ot01  ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
++------------------------------------------------+------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 1              ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 6              ;
+;     -- LPM_WIDTHB                     ; 26             ;
+;     -- LPM_WIDTHP                     ; 32             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "edgedetect:pb3ne"             ;
++-------------+--------+----------+------------------------+
+; Port        ; Type   ; Severity ; Details                ;
++-------------+--------+----------+------------------------+
+; out_posedge ; Output ; Info     ; Explicitly unconnected ;
++-------------+--------+----------+------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "edgedetect:pb0ne"             ;
++-------------+--------+----------+------------------------+
+; Port        ; Type   ; Severity ; Details                ;
++-------------+--------+----------+------------------------+
+; out_posedge ; Output ; Info     ; Explicitly unconnected ;
++-------------+--------+----------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:cnt180B"                                                                                                                                                                              ;
++------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port             ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rst              ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rst[-1]          ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; en               ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; en[-1]           ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; target           ; Input ; Warning  ; Input port expression (32 bits) is smaller than the input port (38 bits) it drives.  Extra input bit(s) "target[37..32]" will be connected to GND.                                 ;
+; target           ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; u_d              ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; u_d[-1]          ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; pLoadControl     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; pLoadControl[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; pLoad            ; Input ; Warning  ; Input port expression (32 bits) is smaller than the input port (38 bits) it drives.  Extra input bit(s) "pLoad[37..32]" will be connected to GND.                                  ;
+; pLoad            ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:cnt50M"                                                                                                                                                                             ;
++----------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port           ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rst            ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rst[-1]        ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; en             ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; en[-1]         ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; target         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (26 bits) it drives.  The 6 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; target[19..18] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; target[9..8]   ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; target[25..23] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; target[21..20] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; target[17..15] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; target[13..12] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; target[5..0]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; target[22]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; target[14]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; target[11]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; target[10]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; target[7]      ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; target[6]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; u_d            ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; u_d[-1]        ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; pLoad          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (26 bits) it drives.  The 6 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; pLoad[19..18]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; pLoad[9..8]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; pLoad[25..23]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; pLoad[21..20]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; pLoad[17..15]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; pLoad[13..12]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; pLoad[5..0]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; pLoad[22]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; pLoad[14]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; pLoad[11]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; pLoad[10]      ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; pLoad[7]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; pLoad[6]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++----------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hvsyncgenerator:hvsyncgenerate"                                                                                                                                                      ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rst     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rst[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 132 02/25/2009 SJ Web Edition
+    Info: Processing started: Mon Mar 17 12:07:02 2014
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_snakegame -c vga_snakegame
+Warning (10259): Verilog HDL error at vga_snakegame.v(184): constant value overflow
+Info: Found 4 design units, including 4 entities, in source file vga_snakegame.v
+    Info: Found entity 1: vga_snakegame
+    Info: Found entity 2: counter
+    Info: Found entity 3: hvsyncgenerator
+    Info: Found entity 4: edgedetect
+Warning (10236): Verilog HDL Implicit Net warning at vga_snakegame.v(183): created implicit net for "DIR_PE"
+Warning (10236): Verilog HDL Implicit Net warning at vga_snakegame.v(183): created implicit net for "DIR_NE"
+Warning (10236): Verilog HDL Implicit Net warning at vga_snakegame.v(186): created implicit net for "PB0_NE"
+Warning (10236): Verilog HDL Implicit Net warning at vga_snakegame.v(187): created implicit net for "PB3_NE"
+Info: Elaborating entity "vga_snakegame" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(116): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(133): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(134): truncated value with size 32 to match size of target (7)
+Info (10266): Verilog HDL Module Instantiation information at vga_snakegame.v(186): instance "pb0ne" connects port 2 to an empty expression
+Info (10266): Verilog HDL Module Instantiation information at vga_snakegame.v(187): instance "pb3ne" connects port 2 to an empty expression
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(263): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(264): truncated value with size 38 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(265): truncated value with size 38 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(278): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(292): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(293): truncated value with size 38 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(294): truncated value with size 38 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(308): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(321): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(322): truncated value with size 38 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(323): truncated value with size 38 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(336): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(350): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(351): truncated value with size 38 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(352): truncated value with size 38 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(366): truncated value with size 32 to match size of target (6)
+Warning (10034): Output port "LEDG[7]" at vga_snakegame.v(6) has no driver
+Warning (10034): Output port "LEDG[6]" at vga_snakegame.v(6) has no driver
+Warning (10034): Output port "LEDG[5]" at vga_snakegame.v(6) has no driver
+Warning (10034): Output port "LEDG[4]" at vga_snakegame.v(6) has no driver
+Warning (10034): Output port "LEDG[3]" at vga_snakegame.v(6) has no driver
+Warning (10034): Output port "LEDG[2]" at vga_snakegame.v(6) has no driver
+Warning (10034): Output port "LEDG[1]" at vga_snakegame.v(6) has no driver
+Warning (10034): Output port "LEDG[0]" at vga_snakegame.v(6) has no driver
+Info: Elaborating entity "hvsyncgenerator" for hierarchy "hvsyncgenerator:hvsyncgenerate"
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(532): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(543): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(588): truncated value with size 32 to match size of target (9)
+Info: Elaborating entity "counter" for hierarchy "counter:cnt50M"
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(492): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(494): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(501): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(504): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at vga_snakegame.v(505): truncated value with size 32 to match size of target (26)
+Info: Elaborating entity "counter" for hierarchy "counter:cnt180B"
+Info: Elaborating entity "edgedetect" for hierarchy "edgedetect:pb0ne"
+Info: Inferred 7 megafunctions from design logic
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2"
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0"
+Info: Elaborated megafunction instantiation "lpm_divide:Mod0"
+Info: Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "10"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_d6m.tdf
+    Info: Found entity 1: lpm_divide_d6m
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_klh.tdf
+    Info: Found entity 1: sign_div_unsign_klh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_a2f.tdf
+    Info: Found entity 1: alt_u_div_a2f
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info: Found entity 1: add_sub_lkc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info: Found entity 1: add_sub_mkc
+Info: Elaborated megafunction instantiation "lpm_divide:Mod1"
+Info: Instantiated megafunction "lpm_divide:Mod1" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "9"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_55m.tdf
+    Info: Found entity 1: lpm_divide_55m
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ckh.tdf
+    Info: Found entity 1: sign_div_unsign_ckh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_qve.tdf
+    Info: Found entity 1: alt_u_div_qve
+Info: Elaborated megafunction instantiation "lpm_divide:Div1"
+Info: Instantiated megafunction "lpm_divide:Div1" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "9"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_2dm.tdf
+    Info: Found entity 1: lpm_divide_2dm
+Info: Elaborated megafunction instantiation "lpm_divide:Div0"
+Info: Instantiated megafunction "lpm_divide:Div0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "10"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_aem.tdf
+    Info: Found entity 1: lpm_divide_aem
+Info: Elaborated megafunction instantiation "lpm_divide:Mod3"
+Info: Instantiated megafunction "lpm_divide:Mod3" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "38"
+    Info: Parameter "LPM_WIDTHD" = "6"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_p6m.tdf
+    Info: Found entity 1: lpm_divide_p6m
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_0mh.tdf
+    Info: Found entity 1: sign_div_unsign_0mh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_23f.tdf
+    Info: Found entity 1: alt_u_div_23f
+Info: Elaborated megafunction instantiation "lpm_divide:Mod2"
+Info: Instantiated megafunction "lpm_divide:Mod2" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "38"
+    Info: Parameter "LPM_WIDTHD" = "6"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult0"
+Info: Instantiated megafunction "lpm_mult:Mult0" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "6"
+    Info: Parameter "LPM_WIDTHB" = "26"
+    Info: Parameter "LPM_WIDTHP" = "32"
+    Info: Parameter "LPM_WIDTHR" = "32"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info: Parameter "MAXIMIZE_SPEED" = "5"
+    Info: Parameter "DEDICATED_MULTIPLIER_CIRCUITRY" = "AUTO"
+Info: Found 1 design units, including 1 entities, in source file db/mult_ot01.tdf
+    Info: Found entity 1: mult_ot01
+Warning: 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: Ignored 34 buffer(s)
+    Info: Ignored 34 SOFT buffer(s)
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[0]" is stuck at GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND
+    Warning (13410): Pin "LEDG[2]" is stuck at GND
+    Warning (13410): Pin "LEDG[3]" is stuck at GND
+    Warning (13410): Pin "LEDG[4]" is stuck at GND
+    Warning (13410): Pin "LEDG[5]" is stuck at GND
+    Warning (13410): Pin "LEDG[6]" is stuck at GND
+    Warning (13410): Pin "LEDG[7]" is stuck at GND
+    Warning (13410): Pin "HEX2[0]" is stuck at GND
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX2[2]" is stuck at GND
+    Warning (13410): Pin "HEX2[3]" is stuck at GND
+    Warning (13410): Pin "HEX2[4]" is stuck at GND
+    Warning (13410): Pin "HEX2[5]" is stuck at GND
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC
+    Warning (13410): Pin "HEX3[0]" is stuck at GND
+    Warning (13410): Pin "HEX3[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
+    Warning (13410): Pin "HEX3[3]" is stuck at GND
+    Warning (13410): Pin "HEX3[4]" is stuck at GND
+    Warning (13410): Pin "HEX3[5]" is stuck at GND
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC
+Info: 5 registers lost all their fanouts during netlist optimizations. The first 5 are displayed below.
+    Info: Register "hvsyncgenerator:hvsyncgenerate|vstate~21" lost all its fanouts during netlist optimizations.
+    Info: Register "hvsyncgenerator:hvsyncgenerate|vstate~22" lost all its fanouts during netlist optimizations.
+    Info: Register "hvsyncgenerator:hvsyncgenerate|state~25" lost all its fanouts during netlist optimizations.
+    Info: Register "hvsyncgenerator:hvsyncgenerate|state~26" lost all its fanouts during netlist optimizations.
+    Info: Register "gameState.00" lost all its fanouts during netlist optimizations.
+Warning: Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "PB[1]"
+    Warning (15610): No output dependent on input pin "PB[2]"
+    Warning (15610): No output dependent on input pin "SW[0]"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+Info: Implemented 8217 device resources after synthesis - the final resource count might be different
+    Info: Implemented 15 input pins
+    Info: Implemented 50 output pins
+    Info: Implemented 8149 logic cells
+    Info: Implemented 3 DSP elements
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 74 warnings
+    Info: Peak virtual memory: 250 megabytes
+    Info: Processing ended: Mon Mar 17 12:09:12 2014
+    Info: Elapsed time: 00:02:10
+    Info: Total CPU time (on all processors): 00:02:08
+
+

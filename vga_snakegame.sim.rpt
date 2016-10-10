@@ -1,0 +1,399 @@
+Simulator report for vga_snakegame
+Mon Mar 03 07:02:36 2014
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 3.0 ms       ;
+; Simulation Netlist Size     ; 179 nodes    ;
+; Simulation Coverage         ;      73.77 % ;
+; Total Number of Transitions ; 3762074      ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C20F484C7 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      73.77 % ;
+; Total nodes checked                                 ; 179          ;
+; Total output ports checked                          ; 183          ;
+; Total output ports with complete 1/0-value coverage ; 135          ;
+; Total output ports with no 1/0-value coverage       ; 37           ;
+; Total output ports with no 1-value coverage         ; 38           ;
+; Total output ports with no 0-value coverage         ; 47           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                  ;
++-------------------------------------------------------------+-------------------------------------------------------------+------------------+
+; Node Name                                                   ; Output Port Name                                            ; Output Port Type ;
++-------------------------------------------------------------+-------------------------------------------------------------+------------------+
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Add0~0        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Add0~0        ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Add0~0        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Add0~1        ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[0]~0     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[0]~0     ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[0]~0     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[0]~1     ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[1]~2     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[1]~2     ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[1]~2     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[1]~3     ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[2]~4     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[2]~4     ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[2]~4     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[2]~5     ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[3]~6     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[3]~6     ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[3]~6     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[3]~7     ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[4]~8     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[4]~8     ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[4]~8     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[4]~9     ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[5]~10    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[5]~10    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[5]~10    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[5]~11    ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[6]~12    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[6]~12    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[6]~12    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[6]~13    ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[7]~14    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[7]~14    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[7]~14    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[7]~15    ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[8]~16    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[8]~16    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[8]~16    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[8]~17    ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[9]~18    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posX[9]~18    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]       ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]       ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[1]       ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[1]       ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[2]       ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[2]       ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[3]       ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[3]       ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[4]       ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[4]       ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[5]       ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[5]       ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~63    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~63    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~63    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~64    ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[1]~69    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[1]~69    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[1]~69    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[1]~70    ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[2]~71    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[2]~71    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[2]~71    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[2]~72    ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[3]~73    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[3]~73    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[3]~73    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[3]~74    ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[4]~75    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[4]~75    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[4]~75    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[4]~76    ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[5]~77    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[5]~77    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[5]~77    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[5]~78    ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[6]~79    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[6]~79    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|hsync         ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|hsync         ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|hrgboff       ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|hrgboff       ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|rgboff        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|rgboff        ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[1]        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[1]        ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[0]        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[0]        ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[2]        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[2]        ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[3]        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[3]        ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[4]        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[4]        ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[5]        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[5]        ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[6]        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[6]        ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[7]        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[7]        ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[8]        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[8]        ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[9]        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[9]        ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[10]       ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[10]       ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal0~0      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal0~0      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal0~1      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal0~1      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|LessThan0~0   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|LessThan0~0   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal0~2      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal0~2      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal0~3      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal0~3      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|state.00      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|state.00      ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal1~0      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal1~0      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal1~1      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal1~1      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|state.11      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|state.11      ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector0~0   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector0~0   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector0~1   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector0~1   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal4~0      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal4~0      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal4~1      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal4~1      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal4~2      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal4~2      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector28~0  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector28~0  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal6~1      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal6~1      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vstate.01     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vstate.01     ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal4~3      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal4~3      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal5~0      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal5~0      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector18~0  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector18~0  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector13~0  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector13~0  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|state.10      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|state.10      ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal0~4      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal0~4      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal2~0      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal2~0      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal2~1      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal2~1      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector13~1  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector13~1  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|state.01      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|state.01      ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal1~2      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal1~2      ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector1~0   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector1~0   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector1~1   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector1~1   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector1~2   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector1~2   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|LessThan0~1   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|LessThan0~1   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|LessThan0~2   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|LessThan0~2   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|LessThan0~3   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|LessThan0~3   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[10]~68    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[10]~68    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector12~0  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector12~0  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector11~0  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector11~0  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector12~1  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector12~1  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector10~0  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector10~0  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector9~0   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector9~0   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector8~0   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector8~0   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector7~0   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector7~0   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector6~0   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector6~0   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector5~0   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector5~0   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector4~0   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector4~0   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector3~0   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector3~0   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector2~0   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector2~0   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~65    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~65    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector28~2  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector28~2  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~68    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~68    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector13~2  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector13~2  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector13~3  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector13~3  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector16~4  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector16~4  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector28~4  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector28~4  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector29~0  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector29~0  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector29~1  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector29~1  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector15~0  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector15~0  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector14~2  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector14~2  ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[10]~69    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[10]~69    ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector14~3  ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector14~3  ; combout          ;
+; |vga_snakegame|VGA_HS                                       ; |vga_snakegame|VGA_HS                                       ; padio            ;
+; |vga_snakegame|rgboff                                       ; |vga_snakegame|rgboff                                       ; padio            ;
+; |vga_snakegame|posX[0]                                      ; |vga_snakegame|posX[0]                                      ; padio            ;
+; |vga_snakegame|posX[1]                                      ; |vga_snakegame|posX[1]                                      ; padio            ;
+; |vga_snakegame|posX[2]                                      ; |vga_snakegame|posX[2]                                      ; padio            ;
+; |vga_snakegame|posX[3]                                      ; |vga_snakegame|posX[3]                                      ; padio            ;
+; |vga_snakegame|posX[4]                                      ; |vga_snakegame|posX[4]                                      ; padio            ;
+; |vga_snakegame|posX[5]                                      ; |vga_snakegame|posX[5]                                      ; padio            ;
+; |vga_snakegame|posX[6]                                      ; |vga_snakegame|posX[6]                                      ; padio            ;
+; |vga_snakegame|posX[7]                                      ; |vga_snakegame|posX[7]                                      ; padio            ;
+; |vga_snakegame|posX[8]                                      ; |vga_snakegame|posX[8]                                      ; padio            ;
+; |vga_snakegame|posX[9]                                      ; |vga_snakegame|posX[9]                                      ; padio            ;
+; |vga_snakegame|posY[0]                                      ; |vga_snakegame|posY[0]                                      ; padio            ;
+; |vga_snakegame|posY[1]                                      ; |vga_snakegame|posY[1]                                      ; padio            ;
+; |vga_snakegame|posY[2]                                      ; |vga_snakegame|posY[2]                                      ; padio            ;
+; |vga_snakegame|posY[3]                                      ; |vga_snakegame|posY[3]                                      ; padio            ;
+; |vga_snakegame|posY[4]                                      ; |vga_snakegame|posY[4]                                      ; padio            ;
+; |vga_snakegame|posY[5]                                      ; |vga_snakegame|posY[5]                                      ; padio            ;
+; |vga_snakegame|CLOCK_50                                     ; |vga_snakegame|CLOCK_50~corein                              ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|hsync~clkctrl ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|hsync~clkctrl ; outclk           ;
+; |vga_snakegame|CLOCK_50~clkctrl                             ; |vga_snakegame|CLOCK_50~clkctrl                             ; outclk           ;
++-------------------------------------------------------------+-------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                   ;
++------------------------------------------------------------+------------------------------------------------------------+------------------+
+; Node Name                                                  ; Output Port Name                                           ; Output Port Type ;
++------------------------------------------------------------+------------------------------------------------------------+------------------+
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[6]      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[6]      ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[7]      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[7]      ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[8]      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[8]      ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[6]~79   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[6]~80   ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[7]~81   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[7]~81   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[7]~81   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[7]~82   ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[8]~83   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[8]~83   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vstate.11    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vstate.11    ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector17~0 ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector17~0 ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal6~0     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal6~0     ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector28~1 ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector28~1 ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector18~1 ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector18~1 ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~67   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~67   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector31~4 ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector31~4 ; combout          ;
+; |vga_snakegame|~GND                                        ; |vga_snakegame|~GND                                        ; combout          ;
+; |vga_snakegame|LEDG[0]                                     ; |vga_snakegame|LEDG[0]                                     ; padio            ;
+; |vga_snakegame|LEDG[1]                                     ; |vga_snakegame|LEDG[1]                                     ; padio            ;
+; |vga_snakegame|LEDG[2]                                     ; |vga_snakegame|LEDG[2]                                     ; padio            ;
+; |vga_snakegame|LEDG[3]                                     ; |vga_snakegame|LEDG[3]                                     ; padio            ;
+; |vga_snakegame|LEDG[4]                                     ; |vga_snakegame|LEDG[4]                                     ; padio            ;
+; |vga_snakegame|LEDG[5]                                     ; |vga_snakegame|LEDG[5]                                     ; padio            ;
+; |vga_snakegame|LEDG[6]                                     ; |vga_snakegame|LEDG[6]                                     ; padio            ;
+; |vga_snakegame|LEDG[7]                                     ; |vga_snakegame|LEDG[7]                                     ; padio            ;
+; |vga_snakegame|VGA_R[0]                                    ; |vga_snakegame|VGA_R[0]                                    ; padio            ;
+; |vga_snakegame|VGA_R[1]                                    ; |vga_snakegame|VGA_R[1]                                    ; padio            ;
+; |vga_snakegame|VGA_R[2]                                    ; |vga_snakegame|VGA_R[2]                                    ; padio            ;
+; |vga_snakegame|VGA_R[3]                                    ; |vga_snakegame|VGA_R[3]                                    ; padio            ;
+; |vga_snakegame|VGA_G[0]                                    ; |vga_snakegame|VGA_G[0]                                    ; padio            ;
+; |vga_snakegame|VGA_G[1]                                    ; |vga_snakegame|VGA_G[1]                                    ; padio            ;
+; |vga_snakegame|VGA_G[2]                                    ; |vga_snakegame|VGA_G[2]                                    ; padio            ;
+; |vga_snakegame|VGA_G[3]                                    ; |vga_snakegame|VGA_G[3]                                    ; padio            ;
+; |vga_snakegame|VGA_B[0]                                    ; |vga_snakegame|VGA_B[0]                                    ; padio            ;
+; |vga_snakegame|VGA_B[1]                                    ; |vga_snakegame|VGA_B[1]                                    ; padio            ;
+; |vga_snakegame|VGA_B[2]                                    ; |vga_snakegame|VGA_B[2]                                    ; padio            ;
+; |vga_snakegame|VGA_B[3]                                    ; |vga_snakegame|VGA_B[3]                                    ; padio            ;
+; |vga_snakegame|posY[6]                                     ; |vga_snakegame|posY[6]                                     ; padio            ;
+; |vga_snakegame|posY[7]                                     ; |vga_snakegame|posY[7]                                     ; padio            ;
+; |vga_snakegame|posY[8]                                     ; |vga_snakegame|posY[8]                                     ; padio            ;
++------------------------------------------------------------+------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                   ;
++------------------------------------------------------------+------------------------------------------------------------+------------------+
+; Node Name                                                  ; Output Port Name                                           ; Output Port Type ;
++------------------------------------------------------------+------------------------------------------------------------+------------------+
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[6]      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[6]      ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[7]      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[7]      ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[8]      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[8]      ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[6]~79   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[6]~80   ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[7]~81   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[7]~81   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[7]~81   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[7]~82   ; cout             ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[8]~83   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[8]~83   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vsync        ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vsync        ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vrgboff      ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vrgboff      ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vstate.00    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vstate.00    ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vstate.11    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vstate.11    ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector17~0 ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector17~0 ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector17~1 ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector17~1 ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vstate.10    ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vstate.10    ; regout           ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal6~0     ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Equal6~0     ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector28~1 ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector28~1 ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector18~2 ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector18~2 ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~66   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~66   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~67   ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|posY[0]~67   ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector28~3 ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector28~3 ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector31~4 ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector31~4 ; combout          ;
+; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector30~0 ; |vga_snakegame|hvsyncgenerator:hvsyncgenerate|Selector30~0 ; combout          ;
+; |vga_snakegame|~GND                                        ; |vga_snakegame|~GND                                        ; combout          ;
+; |vga_snakegame|LEDG[0]                                     ; |vga_snakegame|LEDG[0]                                     ; padio            ;
+; |vga_snakegame|LEDG[1]                                     ; |vga_snakegame|LEDG[1]                                     ; padio            ;
+; |vga_snakegame|LEDG[2]                                     ; |vga_snakegame|LEDG[2]                                     ; padio            ;
+; |vga_snakegame|LEDG[3]                                     ; |vga_snakegame|LEDG[3]                                     ; padio            ;
+; |vga_snakegame|LEDG[4]                                     ; |vga_snakegame|LEDG[4]                                     ; padio            ;
+; |vga_snakegame|LEDG[5]                                     ; |vga_snakegame|LEDG[5]                                     ; padio            ;
+; |vga_snakegame|LEDG[6]                                     ; |vga_snakegame|LEDG[6]                                     ; padio            ;
+; |vga_snakegame|LEDG[7]                                     ; |vga_snakegame|LEDG[7]                                     ; padio            ;
+; |vga_snakegame|VGA_R[0]                                    ; |vga_snakegame|VGA_R[0]                                    ; padio            ;
+; |vga_snakegame|VGA_R[1]                                    ; |vga_snakegame|VGA_R[1]                                    ; padio            ;
+; |vga_snakegame|VGA_R[2]                                    ; |vga_snakegame|VGA_R[2]                                    ; padio            ;
+; |vga_snakegame|VGA_R[3]                                    ; |vga_snakegame|VGA_R[3]                                    ; padio            ;
+; |vga_snakegame|VGA_G[0]                                    ; |vga_snakegame|VGA_G[0]                                    ; padio            ;
+; |vga_snakegame|VGA_G[1]                                    ; |vga_snakegame|VGA_G[1]                                    ; padio            ;
+; |vga_snakegame|VGA_G[2]                                    ; |vga_snakegame|VGA_G[2]                                    ; padio            ;
+; |vga_snakegame|VGA_G[3]                                    ; |vga_snakegame|VGA_G[3]                                    ; padio            ;
+; |vga_snakegame|VGA_B[0]                                    ; |vga_snakegame|VGA_B[0]                                    ; padio            ;
+; |vga_snakegame|VGA_B[1]                                    ; |vga_snakegame|VGA_B[1]                                    ; padio            ;
+; |vga_snakegame|VGA_B[2]                                    ; |vga_snakegame|VGA_B[2]                                    ; padio            ;
+; |vga_snakegame|VGA_B[3]                                    ; |vga_snakegame|VGA_B[3]                                    ; padio            ;
+; |vga_snakegame|VGA_VS                                      ; |vga_snakegame|VGA_VS                                      ; padio            ;
+; |vga_snakegame|posY[6]                                     ; |vga_snakegame|posY[6]                                     ; padio            ;
+; |vga_snakegame|posY[7]                                     ; |vga_snakegame|posY[7]                                     ; padio            ;
+; |vga_snakegame|posY[8]                                     ; |vga_snakegame|posY[8]                                     ; padio            ;
++------------------------------------------------------------+------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 132 02/25/2009 SJ Web Edition
+    Info: Processing started: Mon Mar 03 07:02:15 2014
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off vga_snakegame -c vga_snakegame
+Info: Using vector source file "c:/altera/90/quartus/vga_snakegame/vga_snakegame.vwf"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|PB[0]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|PB[1]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|PB[2]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|PB[3]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|SW[0]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|SW[1]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|SW[2]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|SW[3]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|SW[4]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|SW[5]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|SW[6]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|SW[7]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|SW[8]"
+Warning: Can't find signal in vector source file for input pin "|vga_snakegame|SW[9]"
+Info: Inverted registers were found during simulation
+    Info: Register: |vga_snakegame|hvsyncgenerator:hvsyncgenerate|vrgboff
+    Info: Register: |vga_snakegame|hvsyncgenerator:hvsyncgenerate|hrgboff
+    Info: Register: |vga_snakegame|hvsyncgenerator:hvsyncgenerate|cnt[0]
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      73.77 %
+Info: Number of transitions in simulation is 3762074
+Info: Quartus II Simulator was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 173 megabytes
+    Info: Processing ended: Mon Mar 03 07:02:36 2014
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:21
+
+

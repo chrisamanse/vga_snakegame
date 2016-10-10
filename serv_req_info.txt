@@ -1,0 +1,102 @@
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>VRFX</sub_system>
+	<file>/quartus/synth/vrfx/verific/verilog/veriname_elab.cpp</file>
+	<line>881</line>
+	<callstack>
+	0x05325430: synth_vrfx + 0x35430
+	0x053d4d29: synth_vrfx + 0xe4d29 (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x9d7a9)
+	0x001a80b5: ccl_mem + 0x80b5 (?allocate@MEM_SEGMENT_INTERNAL@@QAIPAXIPAVMEM_TRACKER_THUNK@@PBD@Z + 0x95)
+	</callstack>
+	<error>read to RAM wasn&apos;t mapped to a specific read port</error>
+	<date>Thu Mar 06 12:34:15 2014</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition</version>
+	<full_error>read to RAM wasn&apos;t mapped to a specific read port
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>VRFX</sub_system>
+	<file>/quartus/synth/vrfx/verific/verilog/veriname_elab.cpp</file>
+	<line>881</line>
+	<callstack>
+	0x05325430: synth_vrfx + 0x35430
+	0x053d4d29: synth_vrfx + 0xe4d29 (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x9d7a9)
+	0x002d80b5: ccl_mem + 0x80b5 (?allocate@MEM_SEGMENT_INTERNAL@@QAIPAXIPAVMEM_TRACKER_THUNK@@PBD@Z + 0x95)
+	</callstack>
+	<error>read to RAM wasn&apos;t mapped to a specific read port</error>
+	<date>Thu Mar 06 12:34:25 2014</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition</version>
+	<full_error>read to RAM wasn&apos;t mapped to a specific read port
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>VRFX</sub_system>
+	<file>/quartus/synth/vrfx/verific/verilog/veriname_elab.cpp</file>
+	<line>881</line>
+	<callstack>
+	0x05325430: synth_vrfx + 0x35430
+	0x053d4d29: synth_vrfx + 0xe4d29 (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x9d7a9)
+	0x001c80b5: ccl_mem + 0x80b5 (?allocate@MEM_SEGMENT_INTERNAL@@QAIPAXIPAVMEM_TRACKER_THUNK@@PBD@Z + 0x95)
+	</callstack>
+	<error>read to RAM wasn&apos;t mapped to a specific read port</error>
+	<date>Thu Mar 06 12:36:46 2014</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition</version>
+	<full_error>read to RAM wasn&apos;t mapped to a specific read port
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>VRFX</sub_system>
+	<file>/quartus/synth/vrfx/verific/verilog/veriname_elab.cpp</file>
+	<line>881</line>
+	<callstack>
+	0x05325430: synth_vrfx + 0x35430
+	0x053d4d29: synth_vrfx + 0xe4d29 (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x9d7a9)
+	0x001a80b5: ccl_mem + 0x80b5 (?allocate@MEM_SEGMENT_INTERNAL@@QAIPAXIPAVMEM_TRACKER_THUNK@@PBD@Z + 0x95)
+	</callstack>
+	<error>read to RAM wasn&apos;t mapped to a specific read port</error>
+	<date>Thu Mar 06 12:38:42 2014</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition</version>
+	<full_error>read to RAM wasn&apos;t mapped to a specific read port
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>VRFX</sub_system>
+	<file>/quartus/synth/vrfx/verific/verilog/veriname_elab.cpp</file>
+	<line>881</line>
+	<callstack>
+	0x05325430: synth_vrfx + 0x35430
+	0x053d4d29: synth_vrfx + 0xe4d29 (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x9d7a9)
+	0x002b80b5: ccl_mem + 0x80b5 (?allocate@MEM_SEGMENT_INTERNAL@@QAIPAXIPAVMEM_TRACKER_THUNK@@PBD@Z + 0x95)
+	</callstack>
+	<error>read to RAM wasn&apos;t mapped to a specific read port</error>
+	<date>Thu Mar 06 12:38:55 2014</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition</version>
+	<full_error>read to RAM wasn&apos;t mapped to a specific read port
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>VRFX</sub_system>
+	<file>/quartus/synth/vrfx/verific/verilog/veriname_elab.cpp</file>
+	<line>881</line>
+	<callstack>
+	0x05325430: synth_vrfx + 0x35430
+	0x053d4d29: synth_vrfx + 0xe4d29 (?elaborate@VRFX_ELABORATOR@@UAIPAVHDB_COMPONENT_SCHEMA@@PAVBASEX_ELABORATE_INFO@@@Z + 0x9d7a9)
+	0x001e80b5: ccl_mem + 0x80b5 (?allocate@MEM_SEGMENT_INTERNAL@@QAIPAXIPAVMEM_TRACKER_THUNK@@PBD@Z + 0x95)
+	</callstack>
+	<error>read to RAM wasn&apos;t mapped to a specific read port</error>
+	<date>Thu Mar 06 12:39:15 2014</date>
+	<version>Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition</version>
+	<full_error>read to RAM wasn&apos;t mapped to a specific read port
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition </full_error>
+</internal_error>
+
